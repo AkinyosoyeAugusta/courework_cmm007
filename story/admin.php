@@ -44,7 +44,7 @@
           </li>
             
           <li class="nav-item">
-            <a class="nav-link active" href="#">Welcome Admin</a>
+            <a class="nav-link active" href="">Welcome Admin</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="logout.php">Log Out</a>
