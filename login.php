@@ -21,7 +21,7 @@
         </form>
 
 <div class="Existing User">
-    Not an Existing User<a href="./Signup.php">
+    Not an Existing User<a href="signup.php">
 Register Now
 </a>
 </div>
@@ -49,7 +49,6 @@ Register Now
 
         if(isset($_POST["submit"]))
         {
-            // After clicking login check if the password and email/username is in the database
             $usernameemail = $_POST["email"];
             $password = $_POST["password"];
 

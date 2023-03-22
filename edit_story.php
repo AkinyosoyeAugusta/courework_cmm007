@@ -1,10 +1,9 @@
 <?php
 require 'connection.php';
 
-// Check if the form has been submitted
+
 if(isset($_POST['submit']))
 {
-    // Get the data from the form
     $id = $_POST['id'];
     $username = $_POST['username'];
     $location = $_POST['location'];
@@ -16,33 +15,27 @@ if(isset($_POST['submit']))
     $fileExt = explode('.', $file);
     $fileActualExt = strtolower(end($fileExt));
 
-    // Update the story in the database
+    // this is to upload stories in the database
     $query = "UPDATE stories SET username='$username', location='$location', subject='$subject', story='$story', file ='$file'";
     if ($file != '') {
-        // If a new file is uploaded, update the file name in the database
-        $query .= ", file='$file'";
+         $query .= ", file='$file'";
     }
     $query .= " WHERE id='$id'";
     $result = mysqli_query($conn,$query);
 
     if($result) {
-        // If the story is updated successfully
-        if ($file != '') {
-            // If a new file is uploaded, move the file to the upload directory
-            $fileNameNew = uniqid('', true).".".$fileActualExt;
+    if ($file != '') {
+        $fileNameNew = uniqid('', true).".".$fileActualExt;
             move_uploaded_file($_FILES['file']['tmp_name'], "uploads/$fileNameNew");
         }
         header("Location: user.php");
         exit();
     } else {
-        // If there is an error
         echo '<div class="alert alert-danger" role="alert">Error updating story.</div>';
     }
 }
-
-// Get the ID of the story to be edited
 $id = $_GET['id'];
-// Retrieve the data of the story from the database
+// Retrieve 
 $result = mysqli_query($conn, "SELECT * FROM stories WHERE id='$id'");
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -60,7 +53,7 @@ $row = mysqli_fetch_assoc($result);
     <title>Edit Story</title>
 </head>
 <body>
-    <!-- Display the form with the data of the story -->
+    
 <form action="" method="post" enctype="multipart/form-data">
     <h3>Create Your Story</h3>
     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

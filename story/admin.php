@@ -19,8 +19,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  <!-- Bootstrap and CSS links -->
+<!--     
+  */-- Bootstrap and CSS --*/ -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -59,7 +59,7 @@
   </nav>
 </header>
 
-<!-- DASHBOARD -->
+
 <div class="container">
     <h1>Number of Users and stories</h1>
     <hr>
@@ -88,21 +88,20 @@
 </div>
 
 
-<!-- DASHBOARD END -->
 
 
 
 
     <?php
-        // Check if a story has been marked for deletion
+        // to delete story from database and to check 
         if (isset($_GET['delete'])) {
             $id = $_GET['delete'];
-            // Delete the story from the database
+          
             $query = "DELETE FROM stories WHERE id='$id'";
             $result = mysqli_query($conn, $query);
         }
 
-        // Retrieve all stories from the database
+      
         $query = "SELECT * FROM stories";
         $result = mysqli_query($conn, $query);
     ?>
@@ -148,7 +147,7 @@
 </footer>
 
 
-<!-- Bootstrap JS -->
+<!-- Bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
