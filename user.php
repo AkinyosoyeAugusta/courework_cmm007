@@ -1,30 +1,25 @@
 <?php
-// PHP code for sign-up form
 $host = "localhost";
 $username = "root";
 $password = "";
 $dbname = "storyteller";
 
 
-// Create connection
+// to connect
 session_start();
 $conn = mysqli_connect($host, $username, $password, $dbname);
-
-        // Check connection
         if ($conn->connect_error) {
             die("Connection failed:" . $conn->connect_error);
         
         } 
 
-
-        //if session is login
     if(!empty($_SESSION["id"]))
         {
             $id = $_SESSION["id"];
             $result = mysqli_query($conn, "SELECT * FROM tourist  WHERE id = $id");
              $row = mysqli_fetch_assoc($result);
     }
-    //else go back to login page
+
      else{
            header("Location: login.php");
          }
@@ -69,6 +64,17 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="logout.php">Log Out</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="viewStories.php">View Stories</a></li>
+              <li><a class="dropdown-item" href="Gallery.php">Gallery</a></li>
+              <li><a class="dropdown-item" href="#">Feedback</a></li>
+            </ul>
           </li>
         
 
