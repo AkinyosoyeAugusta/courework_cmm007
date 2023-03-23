@@ -99,7 +99,7 @@ if(isset($_POST['submit']))
                 <input type="text" name = "username" id = "username" placeholder="Enter your username.." required>
                 <input type="text" name = "location" id = "location" placeholder="Enter the Tourist Location.." required>
                 <input type="text" name = "subject" id = "subject" placeholder="Topic.." required>
-                <textarea name="story" id="message"  rows="5" placeholder="Share Toursism Experience?"></textarea>
+                <textarea name="story" id="message"  rows="5" placeholder="Share Toursim Experience?"></textarea>
                 <input type="file" name="file" id="">
                 <button type="submit" name = "submit">Send</button
             </form>

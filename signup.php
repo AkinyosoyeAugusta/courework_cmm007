@@ -16,7 +16,7 @@ if(isset($_POST["submit"]))
     {
 
         echo
-        "<script> alert('Username or Email Has Alredy Being Used, Try another one'); </script>";
+        "<script> alert('Username or Email Has Already Being Used, Try another one'); </script>";
 
 
     }
