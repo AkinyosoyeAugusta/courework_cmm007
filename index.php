@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <title>STORYTTELLING WEB APPLICATION</title>
+    <title>STORYTELLING WEB APPLICATION</title>
 </head>
 <body>
     <header>
@@ -42,7 +42,6 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="viewStories.php">View Stories</a></li>
               <li><a class="dropdown-item" href="Gallery.php">Gallery</a></li>
-              <li><a class="dropdown-item" href="#">Feedback</a></li>
             </ul>
           </li>
           
